@@ -162,7 +162,7 @@ async function openModal(id) {
     const category = p.category || 'Unknown';
     const price = typeof p.price === 'number' ? p.price : 'N/A';
 
-    // Render modal content WITHOUT Add to Cart button
+    // Render modal content 
     modalContentEl.innerHTML = `
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="h-56 md:h-80 bg-slate-100 rounded overflow-hidden">
@@ -224,10 +224,10 @@ function renderCart() {
   cartTotalEl.textContent = '৳'+total;
 }
 
-// Helpers
+
 function truncate(str,n){ if(!str) return ''; return str.length>n ? str.slice(0,n)+'...' : str; }
 
-// Init
+// Initial value 
 (async function init(){
   await loadCategories();
   await selectCategory(null);
